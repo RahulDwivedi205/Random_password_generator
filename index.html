@@ -14,12 +14,14 @@
     <h1> Generate a  Random <br>   Hard  Password</h1>
     <div class="display">
         <input type="text" id="Password" placeholder="Password" readonly>
+        <button id="copyButton" onclick="copyPassword()">Copy</button>
     </div>
     <button onclick="createPassword()"> Generate Hard Password</button><br>
 <div class="easy_generate "></div>
 <h1> Generate a  Random <br>   Easy  Password</h1>
 <div class="display">
     <input type="text" id="easyPassword" placeholder="Password" readonly>
+    <button id="copyButton" onclick="copyPassword2()">Copy</button>
 </div>
 <div class="button2">
     <button onclick="createEasyPassword()"> Generate Easy Password</button>
@@ -77,9 +79,21 @@
 
             passwordBox.value = password;
         }
+    function copyPassword(){
+        
+        const copyInput = document.getElementById("Password").value
+        navigator.clipboard.writeText(copyInput)
+        alert("copied")
 
+    }
 
+    function copyPassword2(){
+        
+        const copyInput = document.getElementById("easyPassword").value
+        navigator.clipboard.writeText(copyInput)
+        alert("copied")
 
+    }
 </script>
     
 </body>
